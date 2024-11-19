@@ -5,3 +5,15 @@ public class items {
         
     }
 }
+
+/*
+ * TODO: Research how to click on an image. 
+ * TODO: Methods: 
+ *  getName
+ *  getDescription
+ *  getStock
+ *  getPrice
+ *  getQuantity
+ *  getImage
+ * 
+ */
