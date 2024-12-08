@@ -8,8 +8,8 @@ public class main {
 
 public class ItemLoader {
 
-    public static List<items> loadItemsFromFile(String fileName) {
-        List<items> itemList = new ArrayList<>();
+    public static List<Items> loadItemsFromFile(String fileName) {
+        List<Items> itemList = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -22,7 +22,7 @@ public class ItemLoader {
                     double price = Double.parseDouble(parts[3].trim());
                     int quantityBought = Integer.parseInt(parts[4].trim());
 
-                    items item = new items(name, description, stock, price, quantityBought);
+                    Items item = new Items(name, description, stock, price, quantityBought);
                     itemList.add(item);
                 } else {
                     System.err.println("Invalid line format: " + line);
@@ -42,7 +42,7 @@ public class ItemLoader {
     public static void main(String[] args) {
         // Launch the GUI application in the Swing event-dispatching thread
         SwingUtilities.invokeLater(() -> {
-            gui gui = new gui(); // Create the GUI instance
+            Gui gui = new Gui(); // Create the GUI instance
             gui.setVisible(true); // Make the GUI visible
             
             
