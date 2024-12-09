@@ -1,21 +1,20 @@
-public class Items {
+import java.io.Serializable;
 
+public class Items implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    private String name = "";
-    private String description = "";
-    private int stock = 0;
-    private double price = 0.00;
-    private int quantity = 0;
+    private String name;
+    private String description;
+    private double price;
+    private String imagePath;
 
-    public Items(String name, String description, int stock, double price, int quantity) {
+    public Items(String name, String description, double price, String imagePath) {
         this.name = name;
         this.description = description;
-        this.stock = stock;
         this.price = price;
-        this.quantity = quantity;
+        this.imagePath = imagePath;
     }
 
-    // Getters
     public String getName() {
         return name;
     }
@@ -24,52 +23,16 @@ public class Items {
         return description;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
     public double getPrice() {
         return price;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    // Setters
-    public void setName(String name) {
-        if (name != null && !name.isEmpty()) {
-            this.name = name;
-        }
-    }
-
-    public void setDescription(String description) {
-        if (description != null && !description.isEmpty()) {
-            this.description = description;
-        }
-    }
-
-    public void setStock(int stock) {
-        if (stock >= 0) {
-            this.stock = stock;
-        }
-    }
-
-    public void setPrice(double price) {
-        if (price >= 0.0) {
-            this.price = price;
-        }
-    }
-
-    public void setQuantity(int quantity) {
-        if (quantity >= 0) {
-            this.quantity = quantity;
-        }
+    public String getImagePath() {
+        return imagePath;
     }
 
     @Override
     public String toString() {
-        return String.format("Items{name='%s', description='%s', stock=%d, price=%.2f, quantity=%d}", 
-                name, description, stock, price, quantity);
+        return String.format("%s - $%.2f\n%s", name, price, description);
     }
 }
