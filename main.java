@@ -7,7 +7,7 @@ public class main {
 
 
 public class ItemLoader {
-
+// Name, Desc, Stock, Price
     public static List<Items> loadItemsFromFile(String fileName) {
         List<Items> itemList = new ArrayList<>();
 
@@ -15,14 +15,13 @@ public class ItemLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 5) {
+                if (parts.length == 4) {
                     String name = parts[0].trim();
                     String description = parts[1].trim();
                     int stock = Integer.parseInt(parts[2].trim());
                     double price = Double.parseDouble(parts[3].trim());
-                    int quantityBought = Integer.parseInt(parts[4].trim());
 
-                    Items item = new Items(name, description, stock, price, quantityBought);
+                    Items item = new Items(name, description, stock, price, 0);
                     itemList.add(item);
                 } else {
                     System.err.println("Invalid line format: " + line);
@@ -47,8 +46,8 @@ public class ItemLoader {
             
             
             // Example for loading items: 
-            // List<items> loadedItems = ItemLoader.loadItemsFromFile("test.txt");
-            // for (items item : loadedItems) {
+            // List<Items> loadedItems = ItemLoader.loadItemsFromFile("test.txt");
+            // for (Items item : loadedItems) {
             //     System.out.println("Name: " + item.getName());
             // }
         });
