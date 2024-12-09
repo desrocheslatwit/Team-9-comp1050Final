@@ -1,7 +1,7 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.*;
 
 public class Gui extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class Gui extends JFrame {
         items.add(new Items("Basketball", "An official Wilson basketball.", 20.0, "Images/basketball.jpg"));
         items.add(new Items("Bicycle", "A sturdy and stylish bicycle.", 120.0, "Images/bicycle.jpg"));
         items.add(new Items("Helmet", "A durable safety helmet.", 50.0, "Images/helmet.jpg"));
-        items.add(new Items("Shoes", "Comfortable walking shoes.", 80.0, "Images/shoe.jpg"));
+        items.add(new Items("Shoes", "Comfortable walking shoes.", 80.0, "Images//shoes.jpg"));
 
         // Create main product grid
         JPanel productGrid = new JPanel(new GridLayout(0, 3, 10, 10)); // Adjusted layout
